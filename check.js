@@ -34,6 +34,5 @@ exports.SecurityChecker = function() {
     }
     );
   });
-
-  console.log('This many hits today! ' + hits)
+  mailer.sendEmail('jobrien874@gmail.com', 'This many hits today! ' + hits)
 }
