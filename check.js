@@ -2,11 +2,15 @@ var clients = require('./clients'); // guys we wanna tell about https in hopes o
 var sslChecker = require("ssl-checker")
 var mailer = require('./mailer');
 var Twit = require('twit')
+var twitterConfig = require('./twitter/config');
+console.log(twitterConfig.twitterApp)
+const Tweeter = new Twit(twitterConfig.twitterApp)
 
 exports.SecurityChecker = function() {
-  let hits = 0
+   let hits = 0
   let list = clients.clientList()
-  list.forEach(element => {
+
+   list.forEach(element => {
     console.log(element)
     sslChecker(element.domain, 'GET', 443).then(result => {
       if(result.valid === true) {
@@ -18,21 +22,11 @@ exports.SecurityChecker = function() {
         let message = mailer.messageMaker(https, howManySites)
         console.log(message)
         if(element.email) {
-        //mailer.sendEmail('jobrien874@gmail.com', message) // switch test email to element.email
+          mailer.sendEmail('jobrien874@gmail.com', message) // switch test email to element.email
         } else {
-          // send a tweet
-          var T = new Twit({
-            consumer_key:         '...',
-            consumer_secret:      '...',
-            access_token:         '...',
-            access_token_secret:  '...',
-            timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
-            strictSSL:            true,     // optional - requires SSL certificates to be valid.
-          })
-
-          T.post('statuses/update', { status: 'My First Tweet :)' }, function(err, data, response) {
-            console.log(data)
-          })
+          // send a direct message
+          var params = {event: {type:"message_create", message_create: { target: { recipient_id: "961910653194850304" }, message_data: { text: message}}}} // switch recipient_id to element.
+          Tweeter.post('direct_messages/events/new', params, function(err, data, response) { console.log(data)})
         }
         // send the lads a tweet/email
         console.log('expired!')
@@ -40,4 +34,6 @@ exports.SecurityChecker = function() {
     }
     );
   });
+
+  console.log('This many hits today! ' + hits)
 }

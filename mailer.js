@@ -52,7 +52,7 @@ exports.messageMaker = function(domain, numberOfSites) {
                 "message": `Hi my names Josh I am a web dev, just letting you know it looks like your HTTPS certificate has expired :) ${domain}, Regards, Josh`
             },
             {
-                "message": `Hey I am a web dev, just letting you guys know that it looks like your HTTPS certificate has expired, this is a bit of security breach so I'd just make to sure that you sort it as soon as you can. ${domain} Kind Regards, Josh`
+                "message": `Hey I am a web dev, just letting you guys know that it looks like your HTTPS certificate has expired, this is a bit of a security breach so I'd just make to sure that you sort it as soon as you can. ${domain} Kind Regards, Josh`
             },
             {
                 "message": `Hi my names Josh I am a web dev, just letting you know it looks like your HTTPS certificate has expired :) ${domain} Regards, Josh`
