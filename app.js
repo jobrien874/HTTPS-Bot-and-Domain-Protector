@@ -2,7 +2,7 @@
 const result = dotenv.config() */
 const http = require('http');
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = process.env.PORT || 5000
 var check = require('./check');
 
 // Scrounger Bot V1.0 Init
