@@ -51,13 +51,6 @@ exports.clientList = function() {
             "domain": "therollingdonut.ie",
             "name": "The Rolling Donut",
             "email": "info@therollingdonut.ie"
-        },
-        {
-            "domain": "gucci.com",
-            "name": "Gucci",
-            "email": "clientservice-europe@it.gucci.com",
-            "twitter": "gucci",
-            "twitterID": "16913418"
         }
     ]
 
