@@ -25,7 +25,7 @@ exports.SecurityChecker = function() {
           mailer.sendEmail('jobrien874@gmail.com', message) // switch test email to element.email
         } else {
           // send a direct message
-          var params = {event: {type:"message_create", message_create: { target: { recipient_id: "961910653194850304" }, message_data: { text: message}}}} // switch recipient_id to element.
+          var params = {event: {type:"message_create", message_create: { target: { recipient_id: "961910653194850304" }, message_data: { text: message}}}} // switch recipient_id to element.twitterID
           Tweeter.post('direct_messages/events/new', params, function(err, data, response) { console.log(data)})
         }
         // send the lads a tweet/email
