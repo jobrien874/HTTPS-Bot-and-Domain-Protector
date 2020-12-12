@@ -1,8 +1,8 @@
 /* const dotenv = require('dotenv');
 const result = dotenv.config() */
 const http = require('http');
-const hostname = '127.0.0.1';
-const port = process.env.PORT || 5000
+var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
 var check = require('./check');
 
 // Scrounger Bot V1.0 Init
@@ -16,7 +16,7 @@ const server = http.createServer((req, res) => {
   res.end('Server Running');
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(server_port, server_host, () => {
+  console.log(`Server running at http://${server_host}:${server_port}/`);
   console.log(check.SecurityChecker())
 });
