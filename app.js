@@ -13,7 +13,7 @@ var check = require('./check');
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Server Running');
+  res.end('ScroungerBot Running...');
 });
 
 server.listen(server_port, server_host, () => {
