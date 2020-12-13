@@ -5,15 +5,10 @@ var check = require('./check');
 
 // For Live Environment - For Testing use the Test Enviro
 
-// Scrounger Bot V1.0 Init
-/*  if (result.error) {
-  throw result.error
-} */
-
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Scrounger Bot V1.0 - Running..');
+  res.end('Scrounger Bot V2.0 - Running..');
 });
 
 server.listen(server_port, server_host, () => {
