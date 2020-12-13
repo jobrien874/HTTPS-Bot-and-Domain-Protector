@@ -34,9 +34,7 @@ exports.SecurityChecker = function () {
         console.log("Report Sent! " + hits + " hits!");
         sendReportToMe(hits);
       }
-    }).catch(error){
-      console.log(error);
-    }
+    })
   });
 
   function sendReportToMe(hits) {
