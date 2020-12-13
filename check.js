@@ -12,10 +12,10 @@ exports.SecurityChecker = function () {
 
   list.forEach((element) => {
     sslChecker(element.domain, "GET", 443).then((result) => {
+      itemsProcessed++;
       if (result.valid === false) {
         let howManySites;
         howManySites = result.validFor.length;
-        itemsProcessed++;
         hits++;
         let https = "https://" + element.domain;
         let message = mailer.messageMaker(https, howManySites);
