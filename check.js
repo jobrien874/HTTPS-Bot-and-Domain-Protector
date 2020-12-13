@@ -3,7 +3,6 @@ var sslChecker = require("ssl-checker")
 var mailer = require('./mailer');
 var Twit = require('twit')
 var twitterConfig = require('./twitter/config');
-console.log(twitterConfig.twitterApp)
 const Tweeter = new Twit(twitterConfig.twitterApp)
 
 exports.SecurityChecker = function() {
@@ -29,12 +28,12 @@ exports.SecurityChecker = function() {
         }
         // send the lads a tweet/email
         console.log('expired!')
-        if(itemsProcessed === list.length) {
-          sendReportToMe();
-        }
       }
     }
     );
+    if(itemsProcessed === list.length) {
+      sendReportToMe();
+    }
   });
 
   function sendReportToMe () {

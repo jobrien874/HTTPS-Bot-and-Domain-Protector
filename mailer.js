@@ -1,7 +1,6 @@
 var nodemailer = require('nodemailer');
 
   exports.sendEmail = function(email, message) {
-      console.log(process.env.EMAIL_ADDRESS)
     var transporter = nodemailer.createTransport({
         service: process.env.EMAIL_NAME,
         auth: {
