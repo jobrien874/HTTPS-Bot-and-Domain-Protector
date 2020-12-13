@@ -35,7 +35,7 @@ exports.SecurityChecker = function () {
         endResult = 'HTTPS Not Expired'
       }
 
-      console.log('ScroungerBot V2.0 - HTTPS Processed for ' + itemsProcessed + 'Site is ' + element.name + 'Result:' + endResult)
+      console.log('ScroungerBot V2.0 - HTTPS Processed for ' + itemsProcessed + ' Site is ' + element.name + 'Result:' + endResult)
 
       if (itemsProcessed === list.length) {
         console.log("Report Sent! " + hits + " hits!");
