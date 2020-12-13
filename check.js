@@ -6,6 +6,7 @@ var twitterConfig = require("./twitter/config"); */
 // const Tweeter = new Twit(twitterConfig.twitterApp);
 
 exports.SecurityChecker = function () {
+  console.log('ScroungerBot V2.0 Initialising ...')
   var hits = 0;
   let itemsProcessed = 0;
   let list = clients.clientList();
@@ -13,6 +14,7 @@ exports.SecurityChecker = function () {
   list.forEach((element) => {
     sslChecker(element.domain, "GET", 443).then((result) => {
       itemsProcessed++;
+      let endResult
       if (result.valid === false) {
         let howManySites;
         howManySites = result.validFor.length;
@@ -28,8 +30,12 @@ exports.SecurityChecker = function () {
           Tweeter.post('direct_messages/events/new', params, function(err, data, response) { console.log(data)}) */
         }
         // send the lads a tweet/email
-        console.log("expired!");
+        endResult = "HTTPS Expired"
+      } else {
+        endResult = 'HTTPS Not Expired'
       }
+
+      console.log('ScroungerBot V2.0 - HTTPS Processed for ' + itemsProcessed + 'Site is ' + element.name + 'Result:' + endResult)
 
       if (itemsProcessed === list.length) {
         console.log("Report Sent! " + hits + " hits!");
