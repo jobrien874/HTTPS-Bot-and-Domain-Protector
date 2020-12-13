@@ -19,8 +19,6 @@ exports.SecurityChecker = function () {
       if(+b >= +a){
         console.log('yes') // if expired
       }
-    }).catch(error => {
-      console.log(error)
     })
   });
 };

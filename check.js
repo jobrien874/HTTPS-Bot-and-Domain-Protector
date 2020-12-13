@@ -1,9 +1,9 @@
 var clients = require("./clients"); // guys we wanna tell about https in hopes of free shit
 var sslChecker = require("ssl-checker");
 var mailer = require("./mailer");
-var Twit = require("twit");
-var twitterConfig = require("./twitter/config");
-const Tweeter = new Twit(twitterConfig.twitterApp);
+/* var Twit = require("twit");
+var twitterConfig = require("./twitter/config"); */
+// const Tweeter = new Twit(twitterConfig.twitterApp);
 
 exports.SecurityChecker = function () {
   var hits = 0;
@@ -22,9 +22,10 @@ exports.SecurityChecker = function () {
         if (element.email) {
           mailer.sendEmail(element.email, message); // switch test email to element.email
         } else {
+          console.log('usually send a tweet')
           // send a direct message
-          var params = {event: {type:"message_create", message_create: { target: { recipient_id: element.twitterID }, message_data: { text: message}}}} // switch recipient_id to element.twitterID
-          Tweeter.post('direct_messages/events/new', params, function(err, data, response) { console.log(data)})
+/*           var params = {event: {type:"message_create", message_create: { target: { recipient_id: element.twitterID }, message_data: { text: message}}}} // switch recipient_id to element.twitterID
+          Tweeter.post('direct_messages/events/new', params, function(err, data, response) { console.log(data)}) */
         }
         // send the lads a tweet/email
         console.log("expired!");
