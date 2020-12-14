@@ -51,6 +51,130 @@ exports.clientList = function() {
             "domain": "therollingdonut.ie",
             "name": "The Rolling Donut",
             "email": "info@therollingdonut.ie"
+        },
+        {
+            "domain": "shaws.ie",
+            "name": "Shaws"
+        },
+        {
+            "domain": "barbour.com",
+            "name": "Barbour"
+        },
+        {
+            "domain": "carraigdonn.com",
+            "name": "Carraig Donn"
+        },
+        {
+            "domain": "dunnesstores.com",
+            "name": "Dunnes"
+        },
+        {
+            "domain": "tesco.com",
+            "name": "Tesco"
+        },
+        {
+            "domain": "game.co.uk",
+            "name": "Game UK"
+        },
+        {
+            "domain": "gamestop.ie",
+            "name": "Gamestop"
+        },
+        {
+            "domain": "smythstoys.com",
+            "name": "Smyths"
+        },
+        {
+            "domain": "kellylou.com",
+            "name": "Kelly Lou"
+        },
+        {
+            "domain": "supervalu.ie",
+            "name": "Supervalu"
+        },
+        {
+            "domain": "supermacs.ie",
+            "name": "Supermacs"
+        },
+        {
+            "domain": "brewdog.com",
+            "name": "Brewdog"
+        },
+        {
+            "domain": "subway.com",
+            "name": "Subway"
+        },
+        {
+            "domain": "asos.com",
+            "name": "Asos"
+        },
+        {
+            "domain": "boohoo.com",
+            "name": "Boohoo"
+        },
+        {
+            "domain": "prettylittlething.ie",
+            "name": "Pretty Little Things"
+        },
+        {
+            "domain": "missguided.com",
+            "name": "Missguided"
+        },
+        {
+            "domain": "airbnb.ie",
+            "name": "Airbnb"
+        },
+        {
+            "domain": "overclockers.co.uk",
+            "name": "Overclockers"
+        },
+        {
+            "domain": "boots.ie",
+            "name": "Boots IE"
+        },
+        {
+            "domain": "ebuyer.com",
+            "name": "Ebuyer"
+        },
+        {
+            "domain": "homestoreandmore.ie",
+            "name": "HomestoreAndMore IE"
+        },
+        {
+            "domain": "homesavers.ie",
+            "name": "Home Savers IE"
+        },
+        {
+            "domain": "nookandcranny.ie",
+            "name": "Nook and Cranny"
+        },
+        {
+            "domain": "harrycorry.com",
+            "name": "Harry Corry"
+        },
+        {
+            "domain": "euronics.ie",
+            "name": "Euronics"
+        },
+        {
+            "domain": "games-workshop.com",
+            "name": "Games Workshop"
+        },
+        {
+            "domain": "expertlaois.ie",
+            "name": "Expert Laois"
+        },
+        {
+            "domain": "telfords.ie",
+            "name": "Telfords"
+        },
+        {
+            "domain": "elverys.ie",
+            "name": "Elverys"
+        },
+        {
+            "domain": "breslinspharmacy.ie",
+            "name": "Breslins Pharmacy"
         }
     ]
 

@@ -6,7 +6,7 @@ var twitterConfig = require("./twitter/config"); */
 // const Tweeter = new Twit(twitterConfig.twitterApp);
 
 exports.SecurityChecker = function () {
-  console.log('ScroungerBot V2.0 Initialising ...')
+  console.log("ScroungerBot V2.0 Initialising ...");
   var hits = 0;
   let itemsProcessed = 0;
   let list = clients.clientList();
@@ -14,34 +14,45 @@ exports.SecurityChecker = function () {
   list.forEach((element) => {
     sslChecker(element.domain, "GET", 443).then((result) => {
       itemsProcessed++;
-      let endResult
+      let endResult;
       if (result.valid === false) {
-        let howManySites;
-        howManySites = result.validFor.length;
-        hits++;
-        let https = "https://" + element.domain;
-        let message = mailer.messageMaker(https, howManySites);
-        if (element.email) {
-          mailer.sendEmail(element.email, message); // switch test email to element.email
-        } else {
-          console.log('usually send a tweet')
-          // send a direct message
-/*           var params = {event: {type:"message_create", message_create: { target: { recipient_id: element.twitterID }, message_data: { text: message}}}} // switch recipient_id to element.twitterID
+        if (result.daysRemaining <= 0) {
+          let howManySites;
+          howManySites = result.validFor.length;
+          hits++;
+          let https = "https://" + element.domain;
+          let message = mailer.messageMaker(https, howManySites);
+          if (element.email) {
+            mailer.sendEmail(element.email, message); // switch test email to element.email
+          } else {
+            console.log("usually send a tweet or no email");
+            // send a direct message
+            /*           var params = {event: {type:"message_create", message_create: { target: { recipient_id: element.twitterID }, message_data: { text: message}}}} // switch recipient_id to element.twitterID
           Tweeter.post('direct_messages/events/new', params, function(err, data, response) { console.log(data)}) */
+          }
+          // send the lads a tweet/email
+          endResult = "HTTPS Expired";
+        } else {
+          console.log('False Negative Result ' + element.domain);
         }
-        // send the lads a tweet/email
-        endResult = "HTTPS Expired"
       } else {
-        endResult = 'HTTPS Not Expired'
+        endResult = "HTTPS Not Expired";
       }
 
-      console.log('ScroungerBot V2.0 - HTTPS Processed for ' + itemsProcessed + ' Site is ' + element.name + 'Result:' + endResult)
+      console.log(
+        "ScroungerBot V2.0 - HTTPS Processed for " +
+          itemsProcessed +
+          " Site is " +
+          element.name +
+          " Result:" +
+          endResult
+      );
 
       if (itemsProcessed === list.length) {
         console.log("Report Sent! " + hits + " hits!");
         sendReportToMe(hits);
       }
-    })
+    });
   });
 
   function sendReportToMe(hits) {
