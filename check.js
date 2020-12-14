@@ -10,6 +10,7 @@ exports.SecurityChecker = function () {
   var hits = 0;
   let itemsProcessed = 0;
   let list = clients.clientList();
+  let reportMessage = "Report Sent! " + hits + " hits!";
 
   list.forEach((element) => {
     sslChecker(element.domain, "GET", 443).then((result) => {
@@ -33,29 +34,36 @@ exports.SecurityChecker = function () {
           // send the lads a tweet/email
           endResult = "HTTPS Expired";
         } else {
-          console.log('False Negative Result ' + element.domain);
+          console.log("False Negative Result " + element.domain);
         }
       } else {
         endResult = "HTTPS Not Expired";
       }
 
-      console.log(
+      let logMessage =
+        "\n" +
         "ScroungerBot V2.0 - HTTPS Processed for " +
-          itemsProcessed +
-          " Site is " +
-          element.name +
-          " Result:" +
-          endResult
-      );
+        itemsProcessed +
+        " Site is " +
+        element.name +
+        " Result:" +
+        endResult +
+        "\n";
+
+      reportMessage += logMessage;
+
+      console.log(logMessage);
 
       if (itemsProcessed === list.length) {
-        console.log("Report Sent! " + hits + " hits!");
-        sendReportToMe(hits);
+        sendReportToMe(hits, reportMessage);
       }
     });
   });
 
-  function sendReportToMe(hits) {
-    mailer.sendEmail("jobrien874@gmail.com", "This many hits today! " + hits);
+  function sendReportToMe(hits, reportMessage) {
+    mailer.sendEmail(
+      "jobrien874@gmail.com",
+      "This many hits today! " + hits + "\n" + reportMessage
+    );
   }
 };

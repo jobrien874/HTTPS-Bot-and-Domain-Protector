@@ -54,127 +54,133 @@ exports.clientList = function() {
         },
         {
             "domain": "shaws.ie",
-            "name": "Shaws"
+            "name": "Shaws",
+            "email": "web@shaws.ie"
         },
         {
             "domain": "barbour.com",
-            "name": "Barbour"
+            "name": "Barbour",
+            "email": "Int-sales@barbour.com"
         },
         {
             "domain": "carraigdonn.com",
-            "name": "Carraig Donn"
+            "name": "Carraig Donn",
+            "email": "online@carraigdonn.com"
         },
         {
             "domain": "dunnesstores.com",
-            "name": "Dunnes"
+            "name": "Dunnes",
+            "email": "customerservice@dunnesstores.com"
         },
         {
             "domain": "tesco.com",
-            "name": "Tesco"
+            "name": "Tesco",
+            "email": "customer.services@tesco.ie"
         },
         {
             "domain": "game.co.uk",
-            "name": "Game UK"
+            "name": "Game UK",
+            "email": "dataprotection.officer@game.co.uk"
         },
         {
             "domain": "gamestop.ie",
-            "name": "Gamestop"
-        },
-        {
-            "domain": "smythstoys.com",
-            "name": "Smyths"
-        },
-        {
-            "domain": "kellylou.com",
-            "name": "Kelly Lou"
+            "name": "Gamestop",
+            "email": "hello@gamestop.ie"
         },
         {
             "domain": "supervalu.ie",
-            "name": "Supervalu"
+            "name": "Supervalu",
+            "email": "supervalu@musgravegroup.com"
         },
         {
             "domain": "supermacs.ie",
-            "name": "Supermacs"
+            "name": "Supermacs",
+            "email": "info@supermacs.ie"
         },
         {
             "domain": "brewdog.com",
-            "name": "Brewdog"
-        },
-        {
-            "domain": "subway.com",
-            "name": "Subway"
-        },
-        {
-            "domain": "asos.com",
-            "name": "Asos"
+            "name": "Brewdog",
+            "email": "pr@brewdog.com"
         },
         {
             "domain": "boohoo.com",
-            "name": "Boohoo"
+            "name": "Boohoo",
+            "email": "customerservices@boohoo.com"
         },
         {
             "domain": "prettylittlething.ie",
-            "name": "Pretty Little Things"
+            "name": "Pretty Little Things",
+            "email": "customer.services@prettylittlething.com"
         },
         {
             "domain": "missguided.com",
-            "name": "Missguided"
+            "name": "Missguided",
+            "email": "customercare@missguided.com"
         },
         {
             "domain": "airbnb.ie",
-            "name": "Airbnb"
+            "name": "Airbnb",
+            "email": "support@airbnb.com"
         },
         {
             "domain": "overclockers.co.uk",
-            "name": "Overclockers"
+            "name": "Overclockers",
+            "email": "business@overclockers.co.uk"
         },
         {
             "domain": "boots.ie",
-            "name": "Boots IE"
+            "name": "Boots IE",
+            "email": "bootsireland@ogilvy.com"
         },
         {
             "domain": "ebuyer.com",
-            "name": "Ebuyer"
+            "name": "Ebuyer",
+            "email": "Chelsea@ebuyer.com"
         },
         {
             "domain": "homestoreandmore.ie",
-            "name": "HomestoreAndMore IE"
+            "name": "HomestoreAndMore IE",
+            "email": "help@homestoreandmore.ie"
         },
         {
             "domain": "homesavers.ie",
-            "name": "Home Savers IE"
+            "name": "Home Savers IE",
+            "email": "ennis.homesavers@outlook.com"
         },
         {
             "domain": "nookandcranny.ie",
-            "name": "Nook and Cranny"
+            "name": "Nook and Cranny",
+            "email": "smile@nookandcranny.ie"
         },
         {
             "domain": "harrycorry.com",
-            "name": "Harry Corry"
+            "name": "Harry Corry",
+            "email": "enquiries@harrycorry.com"
         },
         {
             "domain": "euronics.ie",
-            "name": "Euronics"
+            "name": "Euronics",
+            "email": "support@euronicshelp.zendesk.com"
         },
         {
             "domain": "games-workshop.com",
-            "name": "Games Workshop"
-        },
-        {
-            "domain": "expertlaois.ie",
-            "name": "Expert Laois"
+            "name": "Games Workshop",
+            "email": "custserv@gwplc.com"
         },
         {
             "domain": "telfords.ie",
-            "name": "Telfords"
+            "name": "Telfords",
+            "email": "info@telfords.ie"
         },
         {
             "domain": "elverys.ie",
-            "name": "Elverys"
+            "name": "Elverys",
+            "email": "online@elverys.ie"
         },
         {
             "domain": "breslinspharmacy.ie",
-            "name": "Breslins Pharmacy"
+            "name": "Breslins Pharmacy",
+            "email": "info@breslinspharmacy.ie"
         }
     ]
 
