@@ -1,6 +1,8 @@
 var clients = require("../clients"); // guys we wanna tell about https in hopes of free shit
 var sslChecker = require("ssl-checker");
 var domain = require("domain-expiry");
+const GoDaddy = require('godaddy-api');
+var godaddy = GoDaddy(process.env.GO_API_TEST_KEY, process.env.GO_API_TEST_SECRET);
 
 exports.SecurityChecker = function () {
   let itemsProcessed = 0;
