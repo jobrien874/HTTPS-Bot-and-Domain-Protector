@@ -56,15 +56,15 @@ exports.SecurityChecker = function () {
 
       if (itemsProcessed === list.length) {
         console.log("This many hits today! " + hits);
-        sendReportToMe(hits, reportMessage);
+        sendReportToMe(reportMessage);
       }
     });
   });
 
-  function sendReportToMe(hits, reportMessage) {
+  function sendReportToMe(reportMessage) {
     mailer.sendEmail(
       "jobrien874@gmail.com",
-      "This many hits today! " + hits + "\n" + reportMessage
+      reportMessage
     );
   }
 };
