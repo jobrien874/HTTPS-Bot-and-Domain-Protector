@@ -55,6 +55,7 @@ exports.SecurityChecker = function () {
       console.log(logMessage);
 
       if (itemsProcessed === list.length) {
+        console.log("This many hits today! " + hits);
         sendReportToMe(hits, reportMessage);
       }
     });
