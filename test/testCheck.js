@@ -2,13 +2,23 @@ var clients = require("../clients"); // guys we wanna tell about https in hopes 
 var sslChecker = require("ssl-checker");
 var domain = require("domain-expiry");
 const GoDaddy = require('godaddy-api');
-var godaddy = GoDaddy(process.env.GO_API_TEST_KEY, process.env.GO_API_TEST_SECRET);
+var godaddy = GoDaddy(process.env.GO_API_PROD_KEY, process.env.GO_API_PROD_SECRET);
 
 exports.SecurityChecker = function () {
-  let itemsProcessed = 0;
-  let list = clients.clientList();
+/*   let itemsProcessed = 0;
+  let list = clients.clientList(); */
+  let query = {
+    "domain": 'google.com',
+    "checkType": 'FAST',
+    "forTransfer": false
+  }
 
-  list.forEach((element) => {
+  godaddy.domains.available(query).then(function(res){
+    console.log('run')
+    console.log(res.body)
+  })
+
+/*   list.forEach((element) => {
     sslChecker(element.domain, "GET", 443).then((result) => {
 //      console.log(result)
     });
@@ -22,5 +32,5 @@ exports.SecurityChecker = function () {
         console.log('yes') // if expired
       }
     })
-  });
+  }); */
 };
