@@ -63,7 +63,7 @@ exports.SecurityChecker = function () {
 
   function sendReportToMe(reportMessage) {
     mailer.sendEmail(
-      "jobrien874@gmail.com",
+      process.env.EMAIL_ADDRESS3,
       reportMessage
     );
   }

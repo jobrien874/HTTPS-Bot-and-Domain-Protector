@@ -3,6 +3,7 @@ var sslChecker = require("ssl-checker");
 var domain = require("domain-expiry");
 const GoDaddy = require('godaddy-api');
 var godaddy = GoDaddy(process.env.GO_API_PROD_KEY, process.env.GO_API_PROD_SECRET);
+var jsonFormer = require("../godaddy/godaddy");
 
 exports.SecurityChecker = function () {
 /*   let itemsProcessed = 0;
@@ -23,46 +24,21 @@ exports.SecurityChecker = function () {
     if(result.available) {
       console.log('Available!');
 
+      let json = JSON.stringify(jsonFormer.DomainJsonFormer(query.domain))
+      console.log(json)
       if(price < 20) {
         console.log('yes')
+        let query2 = {
+          "body": json
+        }
+
+        // buy it and let me know its a hit
+        godaddy.domains.validate(query2).then(function(res){
+          console.log(res)
+        });
       }else {
         console.log('no')
       }
- /*      let query2 = {
-        "xShopperId": '328453142'
-      }
-      // buy it and let me know its a hit
-      godaddy.domains.purchase(query2).then(function(res){
-        console.log(res.body)
-      }); */
-
-      let query3 = {
-        "tld": 'com'
-      }
-
-      godaddy.domains.schema(query3).then(function(result){
-        console.log('check')
-        console.log(result.body)
-      });
-    } else {
-      let query2 = {
-        "xShopperId": '328453142',
-        "body": "body"
-      }
-
-      let query3 = {
-        "tld": 'joshobrien.org'
-      }
-      console.log(godaddy.domains.schema(query3));
-      godaddy.domains.schema(query3).then(function(res){
-        console.log(res)
-      });
-
-/*       console.log(godaddy.domains.purchase(query2));
-      godaddy.domains.purchase(query2).then(function(res){
-        console.log(res)
-      }); */
-      // let me know its not available and not a hit
     }
   })
 
