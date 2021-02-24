@@ -1,4 +1,4 @@
-# ScroungerBot
+# Node HTTPS Bot and Domain Buyer
 
 Originally created to contact website owners nicely to let them know there https has expired in the hopes they may give me free donuts or such...which happened.
 
