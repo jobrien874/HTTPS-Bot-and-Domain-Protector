@@ -6,7 +6,7 @@
   "dependencies": {
     "domain-expiry": "^1.2.0",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "godaddy-api": "^1.0.2",
     "nodemailer": "^6.4.17",
     "ssl-checker": "^2.0.7",
